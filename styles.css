@@ -463,3 +463,25 @@ main{
 }
 
 }
+
+.oncall-name{
+    font-size:24px;
+    font-weight:700;
+    margin:12px 0;
+}
+
+.from-home{
+    display:inline-block;
+    background:#e8f5e9;
+    color:#1b5e20;
+    font-weight:700;
+    padding:8px 14px;
+    border-radius:999px;
+    margin:8px 0;
+}
+
+.anaesthetist{
+    font-size:20px;
+    font-weight:600;
+    margin-top:14px;
+}
