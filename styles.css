@@ -1,0 +1,465 @@
+/* =====================================================
+   Cardiothoracic Theatre
+   Weekly Rota
+   Version 1.0
+   ===================================================== */
+
+:root{
+
+    --nhs-blue:#005EB8;
+    --nhs-dark:#003087;
+    --background:#f5f7fa;
+    --card:#ffffff;
+    --text:#222;
+    --border:#d9dde3;
+    --shadow:0 8px 20px rgba(0,0,0,.08);
+
+    --theatre1:#1976d2;
+    --theatre2:#2e7d32;
+    --theatre4:#ef6c00;
+    --theatre5:#7b1fa2;
+    --cathlab:#c62828;
+
+    --support:#2e7d32;
+    --oncall:#d32f2f;
+
+    --radius:14px;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:var(--background);
+    color:var(--text);
+
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+
+.app-header{
+
+    background:linear-gradient(
+        135deg,
+        var(--nhs-blue),
+        var(--nhs-dark)
+    );
+
+    color:white;
+
+    padding:28px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:24px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.title-block h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.subtitle{
+
+    margin-top:8px;
+
+    font-size:20px;
+
+    opacity:.95;
+
+}
+
+.hospital{
+
+    margin-top:6px;
+
+    font-size:15px;
+
+    opacity:.85;
+
+}
+
+.week-block{
+
+    text-align:right;
+
+}
+
+.week-label{
+
+    display:block;
+
+    font-size:13px;
+
+    opacity:.85;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+#weekTitle{
+
+    margin-top:8px;
+
+    font-size:28px;
+
+}
+
+/* ===========================
+   TOOLBAR
+   =========================== */
+
+.toolbar{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:14px;
+
+    padding:18px;
+
+    background:white;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.toolbar button{
+
+    background:white;
+
+    color:var(--nhs-blue);
+
+    border:2px solid var(--nhs-blue);
+
+    border-radius:999px;
+
+    padding:11px 22px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.toolbar button:hover{
+
+    background:var(--nhs-blue);
+
+    color:white;
+
+}
+
+/* ===========================
+   DAY TABS
+   =========================== */
+
+.day-tabs{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:18px;
+
+    background:var(--background);
+
+    flex-wrap:wrap;
+
+}
+
+.day-tab{
+
+    border:none;
+
+    background:#e7edf6;
+
+    color:#555;
+
+    border-radius:999px;
+
+    padding:10px 20px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.day-tab.active{
+
+    background:var(--nhs-blue);
+
+    color:white;
+
+}
+
+/* ===========================
+   STATUS BAR
+   =========================== */
+
+#statusBar{
+
+    text-align:center;
+
+    padding:14px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+#loading{
+
+    color:var(--nhs-blue);
+
+    font-weight:600;
+
+}
+
+#error{
+
+    color:#c62828;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   MAIN
+   =========================== */
+
+main{
+
+    max-width:1450px;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   THEATRE CARDS
+   =========================== */
+
+.day-section{
+    margin-bottom:40px;
+}
+
+.day-heading{
+    font-size:30px;
+    color:var(--nhs-blue);
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+.card-header{
+    color:#fff;
+    padding:12px 18px;
+    font-weight:700;
+    font-size:18px;
+}
+
+.theatre1{background:var(--theatre1);}
+.theatre2{background:var(--theatre2);}
+.theatre4{background:var(--theatre4);}
+.theatre5{background:var(--theatre5);}
+.cathlab{background:var(--cathlab);}
+.support{background:var(--support);}
+.oncall{background:var(--oncall);}
+
+.card-body{
+    padding:18px;
+}
+
+.person{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.info{
+    margin-top:10px;
+    color:#444;
+    line-height:1.6;
+}
+
+.from-home{
+    display:inline-block;
+    margin:10px 0;
+    padding:6px 12px;
+    background:#FFF4CC;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:700;
+    color:#8A6500;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+footer{
+    margin-top:40px;
+    padding:20px 30px;
+    background:#fff;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:14px;
+}
+
+#liveStatus{
+    color:#2e7d32;
+    font-weight:700;
+}
+
+/* ===========================
+   MOBILE
+   =========================== */
+
+@media(max-width:900px){
+
+.app-header{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.week-block{
+    text-align:left;
+}
+
+.toolbar{
+    gap:10px;
+}
+
+.toolbar button{
+    flex:1;
+    min-width:120px;
+}
+
+.day-tabs{
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    padding-bottom:14px;
+}
+
+.day-tab{
+    white-space:nowrap;
+}
+
+.cards-grid{
+    grid-template-columns:1fr;
+}
+
+main{
+    padding:18px;
+}
+
+.title-block h1{
+    font-size:28px;
+}
+
+#weekTitle{
+    font-size:22px;
+}
+
+}
+
+/* ===========================
+   PRINT
+   =========================== */
+
+@media print{
+
+.toolbar,
+.day-tabs,
+footer{
+    display:none;
+}
+
+body{
+    background:#fff;
+}
+
+.app-header{
+    box-shadow:none;
+}
+
+.card{
+    box-shadow:none;
+    border:1px solid #ccc;
+    break-inside:avoid;
+}
+
+main{
+    padding:0;
+}
+
+}
