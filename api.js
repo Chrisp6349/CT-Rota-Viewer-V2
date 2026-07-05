@@ -1,0 +1,1 @@
+class RotaAPI{static async loadRota(){const r=await fetch(CONFIG.API_URL);if(!r.ok)throw new Error("HTTP "+r.status);return await r.json();}}
