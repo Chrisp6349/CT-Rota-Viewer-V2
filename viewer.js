@@ -116,40 +116,61 @@ html += `
 
 </div>
 
-<div class="infoBoxes">
-`;
-        html += `
+html += `
 
-        <div class="infoCard">
+<div class="cards-grid">
 
-            <h3>Support</h3>
+    <div class="card">
 
-            <p>👤 ${value.support?.odp || "No allocation"}</p>
-
-            ${value.support?.list ? `<p>📋 ${value.support.list}</p>` : ""}
-
+        <div class="card-header support-header">
+            🟢 SUPPORT
         </div>
 
-        <div class="infoCard">
+        <div class="card-body">
 
-            <h3>🚨 ON CALL</h3>
+            ${
+                value.support?.odp
+                    ? `<div class="person">👤 ${value.support.odp}</div>`
+                    : `<div class="info">No allocation</div>`
+            }
 
-<p class="oncall-name">
-    👤 ${value.onCall?.odp || "No allocation"}
-</p>
+            ${
+                value.support?.list
+                    ? `<div class="info">📋 ${value.support.list}</div>`
+                    : ``
+            }
 
-${value.onCall?.fromHome ? `
-<p class="from-home">
-    🏠 FROM HOME
-</p>
-` : ""}
-
-<p class="anaesthetist">
-    👨‍⚕️ ${value.onCall?.anaesthetist || "-"}
-</p>
         </div>
 
     </div>
+
+    <div class="card">
+
+        <div class="card-header oncall-header">
+            🚨 ON CALL
+        </div>
+
+        <div class="card-body">
+
+            <div class="person">
+                👤 ${value.onCall?.odp || "No allocation"}
+            </div>
+
+            ${
+                value.onCall?.fromHome
+                    ? `<div class="from-home">🏠 FROM HOME</div>`
+                    : ``
+            }
+
+            <div class="info">
+                👨‍⚕️ ${value.onCall?.anaesthetist || "-"}
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </section>
 `;
