@@ -118,4 +118,39 @@ html += `
 
 <div class="infoBoxes">
 `;
+        html += `
 
+        <div class="infoCard">
+
+            <h3>Support</h3>
+
+            <p>👤 ${value.support?.odp || "No allocation"}</p>
+
+            ${value.support?.list ? `<p>📋 ${value.support.list}</p>` : ""}
+
+        </div>
+
+        <div class="infoCard">
+
+            <h3>🚨 On Call</h3>
+
+            <p>👤 ${value.onCall?.odp || "No allocation"}</p>
+
+            ${value.onCall?.fromHome ? `<p>🏠 FROM HOME</p>` : ""}
+
+            <p>👨‍⚕️ Anaesthetist: ${value.onCall?.anaesthetist || "-"}</p>
+
+        </div>
+
+    </div>
+
+</section>
+`;
+
+            container.innerHTML += html;
+
+        });
+
+    }
+
+}
