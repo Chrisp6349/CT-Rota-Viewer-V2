@@ -37,6 +37,85 @@ class Viewer {
 
         Object.entries(data.days || {}).forEach(([day, value]) => {
 
-        
+        let html = `
+<section class="daySection">
 
+    <h2 class="day-heading">${day}</h2>
+
+    <div class="cards-grid">
+`;
+
+(value.theatres || []).forEach(theatre => {
+
+    let colour = "theatre1";
+
+    switch (theatre.theatre) {
+        case "Theatre 2":
+            colour = "theatre2";
+            break;
+
+        case "Theatre 4":
+            colour = "theatre4";
+            break;
+
+        case "Theatre 5":
+            colour = "theatre5";
+            break;
+
+        case "Cath Lab":
+            colour = "cathlab";
+            break;
+    }
+
+    html += `
+    <div class="card">
+
+        <div class="card-header ${colour}">
+            ${theatre.theatre}
+        </div>
+
+        <div class="card-body">
+    `;
+
+    if (
+        !theatre.odp1 &&
+        !theatre.odp2 &&
+        !theatre.anaesthetist &&
+        !theatre.list
+    ) {
+
+        html += `
+            <div class="info">
+                No allocation
+            </div>
+        `;
+
+    } else {
+
+        if (theatre.odp1)
+            html += `<div class="person">👤 ${theatre.odp1}</div>`;
+
+        if (theatre.odp2)
+            html += `<div class="person">👤 ${theatre.odp2}</div>`;
+
+        if (theatre.anaesthetist)
+            html += `<div class="info">👨‍⚕️ Anaesthetist: ${theatre.anaesthetist}</div>`;
+
+        if (theatre.list)
+            html += `<div class="info">📋 ${theatre.list}</div>`;
+    }
+
+    html += `
+        </div>
+    </div>
+    `;
+
+});
+
+html += `
+
+</div>
+
+<div class="infoBoxes">
+`;
 
