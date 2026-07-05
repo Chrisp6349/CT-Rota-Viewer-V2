@@ -99,7 +99,7 @@ class Viewer {
             html += `<div class="person">👤 ${theatre.odp2}</div>`;
 
         if (theatre.anaesthetist)
-            html += `<div class="info">👨‍⚕️ Anaesthetist: ${theatre.anaesthetist}</div>`;
+            html += `<div class="info">👨‍⚕️ ${theatre.anaesthetist}</div>`;
 
         if (theatre.list)
             html += `<div class="info">📋 ${theatre.list}</div>`;
