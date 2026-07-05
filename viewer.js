@@ -116,7 +116,7 @@ html += `
 
 </div>
 
-html += `
+
 
 <div class="cards-grid">
 
