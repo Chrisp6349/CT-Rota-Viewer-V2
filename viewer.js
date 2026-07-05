@@ -132,14 +132,21 @@ html += `
 
         <div class="infoCard">
 
-            <h3>🚨 On Call</h3>
+            <h3>🚨 ON CALL</h3>
 
-            <p>👤 ${value.onCall?.odp || "No allocation"}</p>
+<p class="oncall-name">
+    👤 ${value.onCall?.odp || "No allocation"}
+</p>
 
-            ${value.onCall?.fromHome ? `<p>🏠 FROM HOME</p>` : ""}
+${value.onCall?.fromHome ? `
+<p class="from-home">
+    🏠 FROM HOME
+</p>
+` : ""}
 
-            <p>👨‍⚕️ Anaesthetist: ${value.onCall?.anaesthetist || "-"}</p>
-
+<p class="anaesthetist">
+    👨‍⚕️ ${value.onCall?.anaesthetist || "-"}
+</p>
         </div>
 
     </div>
