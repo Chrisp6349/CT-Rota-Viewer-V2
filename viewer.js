@@ -166,39 +166,41 @@ html += `
 
     <div class="card">
 
-        <div class="card-header oncall-header">
-            🚨 ON CALL
+ <div class="card">
+
+    <div class="card-header oncall-header">
+        🚨 ON CALL
+    </div>
+
+    <div class="card-body oncall-body">
+
+        <div class="oncall-person">
+            👤 ${value.onCall?.odp || "No allocation"}
         </div>
 
-        <div class="card-body">
+        ${
+            value.onCall?.fromHome
+                ? `<div class="from-home">🏠 FROM HOME</div>`
+                : ``
+        }
 
-            <div class="person">
-                👤 ${value.onCall?.odp || "No allocation"}
-            </div>
-
-            ${
-                value.onCall?.fromHome
-                    ? `<div class="from-home">🏠 FROM HOME</div>`
-                    : ``
-            }
-
-            <div class="info">
-                👨‍⚕️ ${value.onCall?.anaesthetist || "-"}
-            </div>
-
+        <div class="oncall-anaesthetist">
+            👨‍⚕️ ${value.onCall?.anaesthetist || "-"}
         </div>
 
     </div>
 
 </div>
 
+</div>
+
 </section>
 `;
 
-            container.innerHTML += html;
+container.innerHTML += html;
 
-        });
-
-    }
+});
 
 }
+
+}       
