@@ -1,3 +1,13 @@
+/* ============================================
+   CT Rota Viewer Version 1.0
+   Main Viewer Controller
+
+   Modules:
+   - viewer-utils.js
+   - viewer-oncall.js
+   - viewer-theatres.js
+   - viewer-support.js
+============================================ */
 class Viewer {
 
     static formatWeek(dateString) {
