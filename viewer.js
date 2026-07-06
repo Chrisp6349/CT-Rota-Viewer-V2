@@ -35,7 +35,17 @@ class Viewer {
         return `${days[date.getDay()]} ${d}${suffix} ${months[date.getMonth()]} ${date.getFullYear()}`;
 
     }
+static renderOnCall(onCall) {
+    return "";
+}
 
+static renderTheatres(theatres) {
+    return "";
+}
+
+static renderSupport(support) {
+    return "";
+}
     static render(data) {
 
         const container = document.getElementById("rotaContainer");
