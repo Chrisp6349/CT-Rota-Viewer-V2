@@ -56,14 +56,64 @@ static renderSupport(support) {
             "Week Commencing " + Viewer.formatWeek(data.week);
 
         Object.entries(data.days || {}).forEach(([day, value]) => {
-
-        let html = `
+let html = `
 <section class="daySection">
 
     <h2 class="day-heading">${day}</h2>
 
+    <div class="card">
+
+        <div class="card-header oncall-header">
+            🚨 ON CALL
+        </div>
+
+        <div class="card-body oncall-body">
+
+            <div class="oncall-person">
+                👤 ${value.onCall?.odp || "No allocation"}
+            </div>
+
+            ${
+                value.onCall?.fromHome
+                    ? `<div class="from-home">🏠 FROM HOME</div>`
+                    : ``
+            }
+
+            <div class="oncall-anaesthetist">
+                👨‍⚕️ ${value.onCall?.anaesthetist || "-"}
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-header support-header">
+            🟢 SUPPORT
+        </div>
+
+        <div class="card-body">
+
+            ${
+                value.support?.odp
+                    ? `<div class="person">👤 ${value.support.odp}</div>`
+                    : `<div class="info">No allocation</div>`
+            }
+
+            ${
+                value.support?.list
+                    ? `<div class="info">📋 ${value.support.list}</div>`
+                    : ``
+            }
+
+        </div>
+
+    </div>
+
     <div class="cards-grid">
 `;
+  
 
 (value.theatres || []).forEach(theatre => {
 
