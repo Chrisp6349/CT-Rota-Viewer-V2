@@ -357,6 +357,32 @@ main{
     font-weight:700;
     color:#8A6500;
 }
+.oncall-body{
+    text-align:center;
+    padding:24px;
+}
+
+.oncall-person{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:16px;
+}
+
+.oncall-anaesthetist{
+    font-size:20px;
+    font-weight:600;
+    margin-top:16px;
+}
+
+.oncall-header{
+    background:#b71c1c;
+    color:#fff;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
 
 /* ===========================
    FOOTER
@@ -484,31 +510,6 @@ main{
     font-size:20px;
     font-weight:600;
     margin-top:14px;
-}
-.oncall-body{
-    text-align:center;
-    padding:24px;
-}
-
-.oncall-person{
-    font-size:26px;
-    font-weight:700;
-    margin-bottom:16px;
-}
-
-.oncall-anaesthetist{
-    font-size:20px;
-    font-weight:600;
-    margin-top:16px;
-}
-
-.oncall-header{
-    background:#b71c1c;
-    color:#fff;
-    text-align:center;
-    font-size:18px;
-    font-weight:700;
-    letter-spacing:1px;
 }
 
 .from-home{
