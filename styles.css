@@ -485,3 +485,39 @@ main{
     font-weight:600;
     margin-top:14px;
 }
+.oncall-body{
+    text-align:center;
+    padding:24px;
+}
+
+.oncall-person{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:16px;
+}
+
+.oncall-anaesthetist{
+    font-size:20px;
+    font-weight:600;
+    margin-top:16px;
+}
+
+.oncall-header{
+    background:#b71c1c;
+    color:#fff;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.from-home{
+    display:inline-block;
+    background:#2e7d32;
+    color:#fff;
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    margin:10px 0;
+}
