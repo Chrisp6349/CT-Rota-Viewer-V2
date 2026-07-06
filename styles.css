@@ -382,7 +382,14 @@ main{
     font-weight:700;
     letter-spacing:1px;
 }
-
+.support-header{
+    background:#2e7d32;
+    color:#fff;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+}
 
 /* ===========================
    FOOTER
