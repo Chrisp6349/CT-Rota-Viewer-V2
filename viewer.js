@@ -87,28 +87,6 @@ let html = `
 
     </div>
 
-    <div class="card">
-
-        <div class="card-header support-header">
-            🟢 SUPPORT
-        </div>
-
-        <div class="card-body">
-
-            ${
-                value.support?.odp
-                    ? `<div class="person">👤 ${value.support.odp}</div>`
-                    : `<div class="info">No allocation</div>`
-            }
-
-            ${
-                value.support?.list
-                    ? `<div class="info">📋 ${value.support.list}</div>`
-                    : ``
-            }
-
-        </div>
-
     </div>
 
     <div class="cards-grid">
