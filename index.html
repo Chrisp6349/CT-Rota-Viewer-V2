@@ -1,56 +1,104 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Cardiothoracic Theatre | Weekly Rota</title>
+
 <meta name="theme-color" content="#005EB8">
+
 <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
 
 <header class="app-header">
-<div class="title-block">
-<h1>🫀 Cardiothoracic Theatre</h1>
-<p class="subtitle">Weekly Rota</p>
-<p class="hospital">Derriford Hospital</p>
-</div>
 
-<div class="week-block">
-<span class="week-label">Week Commencing</span>
-<h2 id="weekTitle">Loading...</h2>
-</div>
+    <div class="title-block">
+        <h1>🫀 Cardiothoracic Theatre</h1>
+        <p class="subtitle">Weekly Rota</p>
+        <p class="hospital">Derriford Hospital</p>
+    </div>
+
+    <div class="week-block">
+        <span class="week-label">Published Week</span>
+        <h2 id="weekTitle">Loading...</h2>
+    </div>
+
 </header>
 
+
 <nav class="toolbar">
-<button id="prevWeek">◀ Previous</button>
-<button id="today">Today</button>
-<button id="refresh">Refresh</button>
-<button id="print">Print</button>
-<button id="nextWeek">Next ▶</button>
+
+    <button id="prevWeek">◀ Previous</button>
+
+    <select id="weekSelector">
+        <option>Loading...</option>
+    </select>
+
+    <button id="today">Latest</button>
+
+    <button id="refresh">Refresh</button>
+
+    <button id="print">Print</button>
+
+    <button id="nextWeek">Next ▶</button>
+
 </nav>
 
 
-
 <section id="statusBar">
-<div id="loading" class="hidden">🫀 Loading Weekly Rota...</div>
-<div id="error" class="hidden">Unable to load rota.</div>
+
+    <div id="loading" class="hidden">
+        🫀 Loading Published Rota...
+    </div>
+
+    <div id="error" class="hidden">
+        Unable to load rota.
+    </div>
+
 </section>
 
+
 <main id="rotaContainer">
-<!-- viewer.js builds everything here -->
+
 </main>
 
+
 <footer>
-<div class="footer-left"><span id="liveStatus">🟢 LIVE</span></div>
-<div class="footer-centre">Published: <span id="publishedTime">--</span></div>
-<div class="footer-right">Version 1.0</div>
+
+    <div class="footer-left">
+
+        <span id="liveStatus">
+            🟢 LIVE
+        </span>
+
+    </div>
+
+    <div class="footer-centre">
+
+        Published:
+
+        <span id="publishedTime">
+            --
+        </span>
+
+    </div>
+
+    <div class="footer-right">
+
+        Viewer Build 002
+
+    </div>
+
 </footer>
 
 <script src="config.js"></script>
 <script src="api.js"></script>
-<script src="calendar.js"></
-  <script src="viewer-utils.js"></script>                          
+<script src="viewer-utils.js"></script>
 <script src="viewer.js"></script>
 <script src="print.js"></script>
 <script src="app.js"></script>
