@@ -214,35 +214,6 @@ html += `
 
     </div>
 
-    <div class="card">
-
- <div class="card">
-
-    <div class="card-header oncall-header">
-        🚨 ON CALL
-    </div>
-
-    <div class="card-body oncall-body">
-
-        <div class="oncall-person">
-            👤 ${value.onCall?.odp || "No allocation"}
-        </div>
-
-        ${
-            value.onCall?.fromHome
-                ? `<div class="from-home">🏠 FROM HOME</div>`
-                : ``
-        }
-
-        <div class="oncall-anaesthetist">
-            👨‍⚕️ ${value.onCall?.anaesthetist || "-"}
-        </div>
-
-    </div>
-
-</div>
-
-</div>
 
 </section>
 `;
