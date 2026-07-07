@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const loading = document.getElementById("loading");
     const error = document.getElementById("error");
 
-    const refreshBtn = document.getElementById("refresh");
-    const printBtn = document.getElementById("print");
-    const latestBtn = document.getElementById("today");
+    
     const previousBtn = document.getElementById("prevWeek");
     const nextBtn = document.getElementById("nextWeek");
     const weekSelect = document.getElementById("weekSelect");
@@ -119,34 +117,11 @@ publishedWeeks = publishedWeeks
 
     }
 
-    refreshBtn.onclick = () => {
+  
 
-        if (publishedWeeks.length === 0)
-            showLatest();
-        else
-            showWeek(publishedWeeks[currentIndex].week);
+    
 
-    };
 
-    printBtn.onclick = () => window.print();
-
-    latestBtn.onclick = () => {
-
-        if (publishedWeeks.length === 0) {
-
-            showLatest();
-            return;
-
-        }
-
-        currentIndex = publishedWeeks.length - 1;
-
-        weekSelect.selectedIndex = currentIndex;
-
-        showWeek(
-    String(publishedWeeks[currentIndex].week).substring(0,10)
-);
-    };
 
     previousBtn.onclick = () => {
 
