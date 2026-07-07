@@ -66,8 +66,9 @@ let html = `
 
     <h2 class="day-heading">${day}</h2>
 
-    <div class="card">
+    <div class="single-card">
 
+    <div class="card">
         <div class="card-header oncall-header">
             🚨 ON CALL
         </div>
@@ -92,10 +93,11 @@ let html = `
 
     </div>
 
-    </div>
+</div>
 
-    <div class="cards-grid">
-`;
+</div>
+
+<div class="cards-grid">`;
   
 
 (value.theatres || []).forEach(theatre => {
@@ -170,11 +172,9 @@ html += `
 </div>
 
 
-
-<div class="cards-grid">
+<div class="single-card">
 
     <div class="card">
-
         <div class="card-header support-header">
             🟢 SUPPORT
         </div>
@@ -197,9 +197,9 @@ html += `
 
     </div>
 
+</div>
 
-</section>
-`;
+</section>`;
 
 container.innerHTML += html;
 
