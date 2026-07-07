@@ -350,8 +350,8 @@ main{
     padding:12px 18px;
     font-weight:700;
     font-size:18px;
+    text-align:center;
 }
-
 .theatre1{background:var(--theatre1);}
 .theatre2{background:var(--theatre2);}
 .theatre4{background:var(--theatre4);}
