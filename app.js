@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         try {
 
-            const rota = await RotaAPI.loadRota();
-            Viewer.render(rota);
+        const rota = await RotaAPI.loadRota();
 
+rota.week = String(rota.week).substring(0,10);
+
+Viewer.render(rota);
         } catch (err) {
 
             console.error(err);
@@ -46,8 +48,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
 
         const rota = await RotaAPI.loadWeek(week);
-        Viewer.render(rota);
-        } catch (err) {
+
+rota.week = String(rota.week).substring(0,10);
+
+Viewer.render(rota);        } catch (err) {
 
             console.error(err);
             error.classList.remove("hidden");
@@ -65,8 +69,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
 
             publishedWeeks = await RotaAPI.loadPublishedWeeks();
-
-            if (!weekSelect) return;
+publishedWeeks = publishedWeeks
+    .map(item => ({
+        ...item,
+        week: String(item.week).substring(0,10)
+    }))
+    .sort((a,b)=>a.week.localeCompare(b.week));            if (!weekSelect) return;
 
             weekSelect.innerHTML = "";
 
