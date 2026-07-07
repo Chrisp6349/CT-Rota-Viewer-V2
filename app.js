@@ -24,8 +24,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 rota.week = String(rota.week).substring(0,10);
 
-Viewer.render(rota);
-        } catch (err) {
+const idx = publishedWeeks.findIndex(
+    w => w.week === rota.week
+);
+
+if (idx >= 0) {
+    currentIndex = idx;
+    if (weekSelect) {
+        weekSelect.selectedIndex = idx;
+    }
+}
+
+Viewer.render(rota);        } catch (err) {
 
             console.error(err);
             error.classList.remove("hidden");
