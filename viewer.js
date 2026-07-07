@@ -1,5 +1,5 @@
 /* ============================================
-   CT Rota Viewer Version 1.0
+   CT Rota Viewer Version 1.0.1
    Main Viewer Controller
 
    Modules:
