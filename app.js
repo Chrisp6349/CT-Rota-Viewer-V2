@@ -36,16 +36,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     }
 
-    async function showWeek(week) {
+   async function showWeek(week) {
 
-        loading.classList.remove("hidden");
-        error.classList.add("hidden");
+    week = String(week).substring(0,10);
 
-        try {
+    loading.classList.remove("hidden");
+    error.classList.add("hidden");
 
-            const rota = await RotaAPI.loadWeek(week);
-            Viewer.render(rota);
+    try {
 
+        const rota = await RotaAPI.loadWeek(week);
+        Viewer.render(rota);
         } catch (err) {
 
             console.error(err);
@@ -69,17 +70,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             weekSelect.innerHTML = "";
 
-            publishedWeeks.forEach((item, index) => {
+            publishedWeeks.forEach((item) => {
 
-                const option = document.createElement("option");
+    const option = document.createElement("option");
 
-                option.value = item.week;
-                option.textContent = item.week;
+    const week = String(item.week).substring(0, 10);
 
-                weekSelect.appendChild(option);
+    option.value = week;
 
-            });
+    option.textContent =
+        "Week Commencing " +
+        Viewer.formatWeek(week);
 
+    weekSelect.appendChild(option);
+
+});
             if (publishedWeeks.length > 0) {
 
                 currentIndex = publishedWeeks.length - 1;
@@ -120,8 +125,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         weekSelect.selectedIndex = currentIndex;
 
-        showWeek(publishedWeeks[currentIndex].week);
-
+        showWeek(
+    String(publishedWeeks[currentIndex].week).substring(0,10)
+);
     };
 
     previousBtn.onclick = () => {
@@ -132,8 +138,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             weekSelect.selectedIndex = currentIndex;
 
-            showWeek(publishedWeeks[currentIndex].week);
-
+            showWeek(
+    String(publishedWeeks[currentIndex].week).substring(0,10)
+);
         }
 
     };
@@ -146,8 +153,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             weekSelect.selectedIndex = currentIndex;
 
-            showWeek(publishedWeeks[currentIndex].week);
-
+            showWeek(
+    String(publishedWeeks[currentIndex].week).substring(0,10)
+);
         }
 
     };
@@ -158,8 +166,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             currentIndex = weekSelect.selectedIndex;
 
-            showWeek(publishedWeeks[currentIndex].week);
-
+        showWeek(
+    String(publishedWeeks[currentIndex].week).substring(0,10)
+);
         };
 
     }
