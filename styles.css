@@ -323,18 +323,16 @@ main{
 }
 
 .day-heading{
-    font-size:30px;
-    color:var(--nhs-blue);
+    font-size:26px;    color:var(--nhs-blue);
     margin-bottom:20px;
     font-weight:700;
 }
 
 .cards-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
 }
-
 .card{
     background:var(--card);
     border-radius:var(--radius);
@@ -363,18 +361,15 @@ main{
 .oncall{background:var(--oncall);}
 
 .card-body{
-    padding:18px;
+    padding:14px;
 }
-
 .person{
-    font-size:18px;
-    font-weight:600;
+    font-size:17px;    font-weight:600;
     margin-bottom:10px;
 }
 
 .info{
-    margin-top:10px;
-    color:#444;
+    margin-top:6px;    color:#444;
     line-height:1.6;
 }
 
@@ -390,9 +385,8 @@ main{
 }
 .oncall-body{
     text-align:center;
-    padding:24px;
+    padding:14px;
 }
-
 .oncall-person{
     font-size:26px;
     font-weight:700;
