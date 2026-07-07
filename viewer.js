@@ -12,8 +12,13 @@ class Viewer {
 
     static formatWeek(dateString) {
 
-        const date = new Date(dateString);
+        const parts = dateString.split("-");
 
+const date = new Date(
+    Number(parts[0]),
+    Number(parts[1]) - 1,
+    Number(parts[2])
+);
         const months = [
             "January","February","March","April","May","June",
             "July","August","September","October","November","December"
