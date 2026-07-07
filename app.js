@@ -1,3 +1,14 @@
+/* =====================================================
+   Cardiothoracic Theatre Viewer
+   app.js
+   Version 1.0.1
+
+   Handles:
+   - Current week loading
+   - Archive navigation
+   - Previous / Next controls
+   ===================================================== */
+
 document.addEventListener("DOMContentLoaded", async () => {
 
     const loading = document.getElementById("loading");
