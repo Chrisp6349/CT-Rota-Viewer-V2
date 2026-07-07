@@ -333,7 +333,21 @@ main{
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:16px;
 }
-.card{
+.single-card{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
+}
+
+.single-card .card{
+
+    width:280px;
+
+}.card{
     background:var(--card);
     border-radius:var(--radius);
     overflow:hidden;
