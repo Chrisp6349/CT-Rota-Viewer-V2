@@ -1,14 +1,8 @@
-/* ============================================
-   CT Rota Viewer Version 1.0.1
-   Main Viewer Controller
-
-   Modules:
-   - viewer-utils.js
-   - viewer-oncall.js
-   - viewer-theatres.js
-   - viewer-support.js
-============================================ */
-class Viewer {
+/* =====================================================
+   Cardiothoracic Theatre Viewer
+   viewer.js
+   Version 1.0.1
+   ===================================================== */class Viewer {
 
     static formatWeek(dateString) {
 
