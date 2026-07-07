@@ -168,6 +168,33 @@ publishedWeeks = publishedWeeks
 
     await loadArchive();
 
+    // Work out the Monday of the current week
+const today = new Date();
+
+const currentMonday = new Date(today);
+
+const day = currentMonday.getDay();
+
+const diff = day === 0 ? -6 : 1 - day;
+
+currentMonday.setDate(currentMonday.getDate() + diff);
+
+const weekString = currentMonday.toISOString().substring(0,10);
+
+// Look for a published rota for this week
+const idx = publishedWeeks.findIndex(w => w.week === weekString);
+
+if (idx >= 0) {
+
+    currentIndex = idx;
+
+    weekSelect.selectedIndex = idx;
+
+    await showWeek(weekString);
+
+} else {
+
     await showLatest();
 
+}
 });
